@@ -1,6 +1,6 @@
 <h4 id="title">List of users</h4>
 
-<button class="btn btn-success float-right"><i class="far fa-plus-square"></i> Add user</button>
+<a href="#/users/new" class="btn btn-success float-right"><i class="far fa-plus-square"></i> Add user</a>
 <div class="clearfix"></div>
 <div class="row mt-3"></div>
 
@@ -19,34 +19,34 @@
 	</thead>
 	<tbody>
 		<% _.each(users_list, function(user) { %>
-		<tr>
-			<th scope="row"><a href="#users/<%= user.get('id') %>"><%= user.get('id') %></a></th>
-			<td><a href="#users/<%= user.get('id') %>"><%= user.get('username') %></a></td>
-			<td><%= user.get('email') %></td>
-			<td><%= user.get('created') %></td>
-			<td><%= user.get('last_visited') %></td>
-			<td align="center">
-				<% if ( user.get('is_activated') ) { %>
-				<i class="fas fa-check-circle text-success"></i>
-				<% } else { %>
-				<i class="fas fa-ban text-danger"></i>
-				<% }; %>
-			</td>
-			<td align="center">
-				<% if ( user.get('is_admin') ) { %>
-				<i class="fas fa-check-circle text-success"></i>
-				<% } else { %>
-				<i class="fas fa-ban text-danger"></i>
-				<% }; %>
-			</td>
-			<td>
-				<a class="btn btn-sm btn-secondary" href="#users/<%= user.get('id') %>">
-					<i class="far fa-address-card"></i>
-				</a>
-				<button class="btn btn-sm btn-warning"><i class="far fa-edit"></i></button>
-				<button class="btn btn-sm btn-danger"><i class="far fa-trash-alt"></i></button>
-			</td>
-		</tr>
+			<tr>
+				<th scope="row"><a href="#/users/<%= user.get('id') %>"><%= user.get('id') %></a></th>
+				<td><a href="#/users/<%= user.get('id') %>"><%= user.get('username') %></a></td>
+				<td><%= user.get('email') %></td>
+				<td><%= user.get('created') %></td>
+				<td><%= user.get('last_visited') %></td>
+				<td align="center">
+					<% if ( user.get('is_activated') ) { %>
+						<i class="fas fa-check-circle text-success"></i>
+					<% } else { %>
+						<i class="fas fa-ban text-danger"></i>
+					<% }; %>
+				</td>
+				<td align="center">
+					<% if ( user.get('is_admin') ) { %>
+						<i class="fas fa-check-circle text-success"></i>
+					<% } else { %>
+						<i class="fas fa-ban text-danger"></i>
+					<% }; %>
+				</td>
+				<td>
+					<a class="btn btn-sm btn-secondary" href="#/users/<%= user.get('id') %>">
+						<i class="far fa-address-card"></i>
+					</a>
+					<button class="btn btn-sm btn-warning"><i class="far fa-edit"></i></button>
+					<button class="btn btn-sm btn-danger"><i class="far fa-trash-alt"></i></button>
+				</td>
+			</tr>
 		<% }); %>
 	</tbody>
 </table>

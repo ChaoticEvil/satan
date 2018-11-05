@@ -1,6 +1,6 @@
 define(
-	['backbone', 'app/js/views/usersList', 'app/js/views/userDetail'],
-	function(Backbone, UsersListView, UserDetailView) {
+	['backbone', 'app/js/views/usersList', 'app/js/views/userDetail', 'app/js/views/createUser'],
+	function(Backbone, UsersListView, UserDetailView, CreateUserView) {
 		'use strict';
 		
 		var Router = Backbone.Router.extend({
@@ -8,6 +8,7 @@ define(
 				'': 'index',
 				'index': 'index',
 				'users': 'usersList',
+				'users/new': 'createUser',
 				'users/:user_id': 'showUserDetail',
 			},
 
@@ -23,6 +24,11 @@ define(
 
 			showUserDetail: function(user_id) {
 				new UserDetailView(user_id);
+			},
+
+			createUser: function() {
+				console.log("CLICK");
+				new CreateUserView();
 			}
 		});
 
