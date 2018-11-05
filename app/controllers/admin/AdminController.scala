@@ -11,6 +11,7 @@ import play.api.i18n.{MessagesApi, I18nSupport}
 
 @Singleton
 class AdminController @Inject()(
+  config: Configuration,
   cc: ControllerComponents,
 ) extends AbstractController(cc) with I18nSupport {
 

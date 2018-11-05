@@ -16,6 +16,8 @@ define(['backbone'], function (Backbone) {
 			avatar: 'http://localhost:9000/assets/admin/app/img/default-avatar.png',
 			username: null,
 			email: null,
+			first_name: null,
+			last_name: null,
 			created: null,
 			last_visited: null,
 			is_activated: false,

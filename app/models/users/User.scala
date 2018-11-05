@@ -64,6 +64,8 @@ trait UserJson {
         "id" -> user.id,
         "username" -> user.username,
         "email" -> user.email,
+        "first_name" -> user.first_name,
+        "last_name" -> user.last_name,
         "created" -> user.created.toString("yyyy-MM-dd"),
         "last_visited" -> user.last_visited.map(_.toString("yyyy-MM-dd HH:mm:ss")),
         "is_activated" -> user.is_activated,
