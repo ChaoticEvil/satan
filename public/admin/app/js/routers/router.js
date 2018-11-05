@@ -13,9 +13,9 @@ define(
 			},
 
 			index: function() {
-				$('#app').html('Hello, Backbone!!!');
+				$('#app').html('Dashboard');
 				$("li.nav-item a.active").removeClass("active");
-				$("li.nav-item a[href$='#index']").addClass("active");
+				$("li.nav-item a[href$='#/index']").addClass("active");
 			},
 
 			usersList: function() {

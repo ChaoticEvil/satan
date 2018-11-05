@@ -32,7 +32,7 @@ define(
 
 			change_menu_state: function() {
 				$("li.nav-item a.active").removeClass("active");
-				$("li.nav-item a[href$='#users']").addClass("active");
+				$("li.nav-item a[href$='#/users']").addClass("active");
 			}
 		});
 		

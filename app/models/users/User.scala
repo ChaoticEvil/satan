@@ -62,6 +62,7 @@ trait UserJson {
     def writes(user: User) = {
       Json.obj(
         "id" -> user.id,
+        "uid" -> user.uid,
         "username" -> user.username,
         "email" -> user.email,
         "first_name" -> user.first_name,

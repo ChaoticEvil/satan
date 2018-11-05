@@ -13,6 +13,7 @@ define(
 				var _self = this;
 				this.user = undefined;
 				this.change_menu_state();
+				this.render();
 			},
 			
 			render: function(options) {
@@ -21,7 +22,7 @@ define(
 
 			change_menu_state: function() {
 				$("li.nav-item a.active").removeClass("active");
-				$("li.nav-item a[href$='#users']").addClass("active");
+				$("li.nav-item a[href$='#/users']").addClass("active");
 			}
 		});
 		

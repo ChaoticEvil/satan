@@ -13,6 +13,7 @@ define(['backbone'], function (Backbone) {
 		
 		defaults: {
 			id: null,
+			uid: null,
 			avatar: 'http://localhost:9000/assets/admin/app/img/default-avatar.png',
 			username: null,
 			email: null,
