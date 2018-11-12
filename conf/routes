@@ -5,3 +5,4 @@ GET     /assets/*file               controllers.Assets.versioned(path="/public",
 ## ADMIN API
 GET     /admin/api/v1/users          controllers.AdminUserController.getUsersList
 GET     /admin/api/v1/users/:userId  controllers.AdminUserController.getUserDetail(userId: Long)
+POST    /admin/api/v1/users          controllers.AdminUserController.createUser

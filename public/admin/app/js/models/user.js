@@ -24,6 +24,20 @@ define(['backbone'], function (Backbone) {
 			is_activated: false,
 			is_admin: false
 		},
+
+		saveUser: function(options) {
+			this.save(options.data, {
+				type: options.method || 'POST',
+
+				success: function(model) {
+					window.location.replace('#projects');
+				},
+				error: function(model, response, options) {
+					console.log('Error! Can not save project.');
+				}
+			});
+			return false;
+		},
 	});
 	
 	return UserModel;

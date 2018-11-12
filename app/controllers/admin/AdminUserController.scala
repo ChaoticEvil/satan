@@ -22,12 +22,16 @@ class AdminUserController @Inject()(
     Ok(Json.toJson(userService.all)(Writes.list(UserList.jsonWrites)))
   }
 
-  def getUserDetail(userId: Long) = Action { implicit requiest =>
+  def getUserDetail(userId: Long) = Action { implicit request =>
     Ok(
       Json.toJson(
         userService.getWholeById(userId).map(Json.toJson(_)(User.jsonWrites))
       )
     )
+  }
+
+  def createUser = Action { implicit request =>
+    Ok
   }
 
 }

@@ -5,7 +5,9 @@ define(
 		
 		var CreateUserView = Backbone.View.extend({
 			el: "#app",
-			events: {},
+			events: {
+				'form submit': createUser
+			},
 			tagName: 'div',		
 			template: _.template(CreateUserTmpl),
 
@@ -23,6 +25,15 @@ define(
 			change_menu_state: function() {
 				$("li.nav-item a.active").removeClass("active");
 				$("li.nav-item a[href$='#/users']").addClass("active");
+			},
+
+			createUser: function(event) {
+				this.undelegateEvents();
+
+				var projectDetail = $(event.currentTarget).serializeObject();
+				this.project.saveProject({'data': projectDetail, 'method': 'POST'});
+				
+return false;
 			}
 		});
 		
