@@ -25,15 +25,26 @@ define(['backbone'], function (Backbone) {
 			is_admin: false
 		},
 
+		validate: function(attrs, options) {
+			// validate username (min, max, chars)
+			// validate email (min, max, chars)
+			// validate first_name (min, max, chars)
+			// validate last_name (min, max, chars)
+			// validate password (min, max)
+			// validate password_confirm (min, max)
+			return false;
+		},
+
 		saveUser: function(options) {
 			this.save(options.data, {
 				type: options.method || 'POST',
 
 				success: function(model) {
-					window.location.replace('#projects');
+					window.location.replace('#/users');
 				},
 				error: function(model, response, options) {
-					console.log('Error! Can not save project.');
+					console.log(response);
+					alert(response.responseText);
 				}
 			});
 			return false;

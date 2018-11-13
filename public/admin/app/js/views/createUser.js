@@ -1,12 +1,12 @@
 define(
 	['underscore', 'backbone', '../models/user', 'text!../tmpls/createUser.html'],
-	function (_, Backbone, UsersModel, CreateUserTmpl) {
+	function (_, Backbone, UserModel, CreateUserTmpl) {
 		'use strict';
 		
 		var CreateUserView = Backbone.View.extend({
 			el: "#app",
 			events: {
-				'form submit': createUser
+				'click #create-user-btn': 'createUser'
 			},
 			tagName: 'div',		
 			template: _.template(CreateUserTmpl),
@@ -30,10 +30,20 @@ define(
 			createUser: function(event) {
 				this.undelegateEvents();
 
-				var projectDetail = $(event.currentTarget).serializeObject();
-				this.project.saveProject({'data': projectDetail, 'method': 'POST'});
+				var formData = $('form').serializeObject();
+				console.log("FORM_DATA: ", formData);
+
+				var user = new UserModel(formData);
+				console.log("USER: ", user);
 				
-return false;
+				if (user.validate()) {
+					console.log("VALID");
+					this.project.saveProject({data: formData});
+				} else {
+					console.log("INVALID");
+				}
+
+				return false;
 			}
 		});
 		
